@@ -1,8 +1,8 @@
-export const keys = [ 'A♭', 'A', 'B♭', 'B', 'C♭', 'C', 'C♯', 'D♭', 'D', 'E♭', 'E', 'F', 'F♯', 'G♭', 'G' ]
+const keys = [ 'A♭', 'A', 'B♭', 'B', 'C♭', 'C', 'C♯', 'D♭', 'D', 'E♭', 'E', 'F', 'F♯', 'G♭', 'G' ]
 
-export const notes = [ 'A♭', 'A', 'A♯', 'B♭', 'B', 'C♭', 'C', 'C♯', 'D♭', 'D', 'D♯', 'E♭', 'E', 'F', 'F♯', 'G♭', 'G', 'G#' ]
+const notes = [ 'A♭', 'A', 'A♯', 'B♭', 'B', 'C♭', 'C', 'C♯', 'D♭', 'D', 'D♯', 'E♭', 'E', 'F', 'F♯', 'G♭', 'G', 'G#' ]
 
-export const progressions = [ 
+const progressions = [ 
     'I - IV - V', 
     'I - V - IV', 
     'IV - V - I', 
@@ -11,10 +11,20 @@ export const progressions = [
     'ii - vi - IV - V' 
 ]
 
-export function getRandomFrom(arr) {
-  return arr[randUpTo(arr.length)]
+function getRandomProgression() {
+  return progressions[randUpTo(progressions.length)]
 }
 
-export function randUpTo(max) {
+function getRandomNote() {
+  return notes[randUpTo(notes.length)]
+}
+
+function getRandomKey() {
+  return keys[randUpTo(keys.length)]
+}
+
+function randUpTo(max) {
   return Math.floor(Math.random() * max)
 }
+
+module.exports = {getRandomProgression, getRandomNote, getRandomKey}
