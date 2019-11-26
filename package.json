@@ -1,0 +1,26 @@
+{
+  "name": "guitar-trainer-lib",
+  "version": "0.0.0",
+  "description": "Generate musical keys, notes, and progressions",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciancic/guitar-trainer-lib.git"
+  },
+  "keywords": [
+    "music",
+    "music",
+    "practice",
+    "training",
+    "guitar"
+  ],
+  "author": "Lucian Condrea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luciancic/guitar-trainer-lib/issues"
+  },
+  "homepage": "https://github.com/luciancic/guitar-trainer-lib#readme"
+}
