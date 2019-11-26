@@ -4,7 +4,7 @@
   "description": "Generate musical keys, notes, and progressions",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest --watchAll --runInBand"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/luciancic/guitar-trainer-lib/issues"
   },
-  "homepage": "https://github.com/luciancic/guitar-trainer-lib#readme"
+  "homepage": "https://github.com/luciancic/guitar-trainer-lib#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
