@@ -12,17 +12,22 @@ const progressions = [
 ]
 
 function getRandomProgression() {
-  return progressions[randUpTo(progressions.length)]
+  const index = randUpTo(progressions.length)
+  return progressions[index];
 }
 
 function getRandomNote() {
-  return notes[randUpTo(notes.length)]
+  const index = randUpTo(notes.length);
+  return notes[index];
 }
 
 function getRandomKey() {
+  const index = randUpTo(keys.length);
+  return keys[index];
   return keys[randUpTo(keys.length)]
 }
 
+// Returns an integer between 0 and max (exluding max)
 function randUpTo(max) {
   return Math.floor(Math.random() * max)
 }
