@@ -51,3 +51,12 @@ test('test getRandomFret', () => {
     const test2 = results.every(value => (0 <= value) && (value < 25) && (typeof value === 'number'));
     expect(test2).toBe(true);
 })
+
+test('test getRandomFret with arg input', () => {
+    let results = uniquesFrom(() => getRandomFret(20));
+    const test = results.length;
+    expect(test).toBe(20);
+
+    const test2 = results.every(value => (0 <= value) && (value < 20) && (typeof value === 'number'));
+    expect(test2).toBe(true);
+})
