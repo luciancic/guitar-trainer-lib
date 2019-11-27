@@ -24,7 +24,10 @@ function getRandomNote() {
 function getRandomKey() {
   const index = randUpTo(keys.length);
   return keys[index];
-  return keys[randUpTo(keys.length)]
+}
+
+function getRandomFret(max = 25) {
+  return randUpTo(max);
 }
 
 // Returns an integer between 0 and max (exluding max)
@@ -32,4 +35,4 @@ function randUpTo(max) {
   return Math.floor(Math.random() * max)
 }
 
-module.exports = {getRandomProgression, getRandomNote, getRandomKey}
+module.exports = {getRandomProgression, getRandomNote, getRandomKey, getRandomFret}

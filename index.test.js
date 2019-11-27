@@ -1,4 +1,4 @@
-const {getRandomProgression, getRandomNote, getRandomKey} = require('./index.js');
+const {getRandomProgression, getRandomNote, getRandomKey, getRandomFret} = require('./index.js');
 
 const keys = [ 'A♭', 'A', 'B♭', 'B', 'C♭', 'C', 'C♯', 'D♭', 'D', 'E♭', 'E', 'F', 'F♯', 'G♭', 'G' ];
 
@@ -42,4 +42,12 @@ test('test getRandomKey', () => {
     const test = keys.every(key => results.includes(key));
     expect(test).toBe(true);
 })
+
+test('test getRandomFret', () => {
+    let results = uniquesFrom(getRandomFret);
+    const test = results.length;
+    expect(test).toBe(25);
+
+    const test2 = results.every(value => (0 <= value) && (value < 25) && (typeof value === 'number'));
+    expect(test2).toBe(true);
 })
