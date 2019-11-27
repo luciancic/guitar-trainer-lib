@@ -13,28 +13,33 @@ const progressions = [
     'ii - vi - IV - V' 
 ]
 
-test('test getRandomProgression', () => {
-    let previousResults = [];
-    for(let i = 0; i < 1000; i++) {
-        let result = getRandomProgression();
-        if ( !(previousResults.includes(result)) ){
-            previousResults.push(result)
+function uniquesFrom (randomFunction, loopCount = 1000) {
+    let uniqueOutputs = [];
+    for(let i = 0; i < loopCount; i++) {
+        let unique = randomFunction();
+        if ( !(uniqueOutputs.includes(unique)) ){
+            uniqueOutputs.push(unique)
         }
     }
-    const test = progressions.every((progression) => {
-        return previousResults.includes(progression);
-    })
+    return uniqueOutputs;
+}
+
+
+test('test getRandomProgression', () => {
+    let results = uniquesFrom(getRandomProgression);
+    const test = progressions.every(progression => results.includes(progression));
     expect(test).toBe(true);
 })
 
 test('test getRandomNote', () => {
-    for(let i = 0; i < 1000; i++) {
-        expect(notes).toContain(getRandomNote());
-    }
+    let results = uniquesFrom(getRandomNote);
+    const test = notes.every(note => results.includes(note));
+    expect(test).toBe(true);
 })
 
 test('test getRandomKey', () => {
-    for(let i = 0; i < 1000; i++) {
-        expect(keys).toContain(getRandomKey());
-    }
+    let results = uniquesFrom(getRandomKey);
+    const test = keys.every(key => results.includes(key));
+    expect(test).toBe(true);
+})
 })
