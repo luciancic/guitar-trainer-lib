@@ -13,12 +13,15 @@ or
 import {
   getRandomProgression,
   getRandomNote,
-  getRandomKey
+  getRandomKey,
+  getRandomFret
 } from 'guitar-trainer-lib'
 
 getRandomProgression() // 'I - V - IV'
 getRandomNote() // 'E♭'
 getRandomKey() // 'G♭'
+getRandomFret() // 18 (Default 24 fret max)
+getRandomFret(21) // 12 (Add arg to set max)
 ```
 ### Possible Outputs
 ```

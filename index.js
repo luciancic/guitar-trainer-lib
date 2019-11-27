@@ -26,8 +26,8 @@ function getRandomKey() {
   return keys[index];
 }
 
-function getRandomFret(max = 25) {
-  return randUpTo(max);
+function getRandomFret(max = 24) {
+  return randUpTo(max + 1);
 }
 
 // Returns an integer between 0 and max (exluding max)

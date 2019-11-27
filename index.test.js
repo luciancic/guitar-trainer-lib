@@ -55,9 +55,9 @@ test('test getRandomFret', () => {
 test('test getRandomFret with arg input', () => {
     let results = uniquesFrom(() => getRandomFret(20));
     const test = results.length;
-    expect(test).toBe(20);
+    expect(test).toBe(21);
 
-    const test2 = results.every(value => (0 <= value) && (value < 20) && (typeof value === 'number'));
+    const test2 = results.every(value => (0 <= value) && (value < 21) && (typeof value === 'number'));
     expect(test2).toBe(true);
 })
 
