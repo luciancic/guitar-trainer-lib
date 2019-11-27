@@ -31,8 +31,18 @@ function getRandomFret(max = 25) {
 }
 
 // Returns an integer between 0 and max (exluding max)
-function randUpTo(max) {
-  return Math.floor(Math.random() * max)
+function randFactory() {
+  let previous;
+  return function randTo(max) {
+    let newValue = Math.floor(Math.random() * max);
+    if (newValue === previous) {
+      return randTo(max);
+    }
+    previous = newValue;
+    return newValue;
+  }
 }
+
+const randUpTo = randFactory();
 
 module.exports = {getRandomProgression, getRandomNote, getRandomKey, getRandomFret}
