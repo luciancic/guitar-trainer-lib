@@ -12,19 +12,27 @@ const progressions = [
 ]
 
 function getRandomProgression() {
-  return progressions[randUpTo(progressions.length)]
+  const index = randUpTo(progressions.length)
+  return progressions[index];
 }
 
 function getRandomNote() {
-  return notes[randUpTo(notes.length)]
+  const index = randUpTo(notes.length);
+  return notes[index];
 }
 
 function getRandomKey() {
-  return keys[randUpTo(keys.length)]
+  const index = randUpTo(keys.length);
+  return keys[index];
 }
 
+function getRandomFret(max = 25) {
+  return randUpTo(max);
+}
+
+// Returns an integer between 0 and max (exluding max)
 function randUpTo(max) {
   return Math.floor(Math.random() * max)
 }
 
-module.exports = {getRandomProgression, getRandomNote, getRandomKey}
+module.exports = {getRandomProgression, getRandomNote, getRandomKey, getRandomFret}
