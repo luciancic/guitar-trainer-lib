@@ -14,9 +14,17 @@ const progressions = [
 ]
 
 test('test getRandomProgression', () => {
+    let previousResults = [];
     for(let i = 0; i < 1000; i++) {
-        expect(progressions).toContain(getRandomProgression());
+        let result = getRandomProgression();
+        if ( !(previousResults.includes(result)) ){
+            previousResults.push(result)
+        }
     }
+    const test = progressions.every((progression) => {
+        return previousResults.includes(progression);
+    })
+    expect(test).toBe(true);
 })
 
 test('test getRandomNote', () => {
