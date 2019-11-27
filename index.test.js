@@ -60,3 +60,21 @@ test('test getRandomFret with arg input', () => {
     const test2 = results.every(value => (0 <= value) && (value < 20) && (typeof value === 'number'));
     expect(test2).toBe(true);
 })
+
+test('test getRandomKey for no repetition', () => {
+    let previousResult = getRandomKey();
+    let test = true;
+    
+    for(let i = 0; i < 1000; i++) {
+        let result = getRandomKey();
+        
+        console.log(i);
+
+        if (result === previousResult) {
+            test = false;
+            break
+        }
+        previousResult = result;
+    }
+    expect(test).toBe(true);
+})
